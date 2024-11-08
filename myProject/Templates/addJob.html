@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<!DOCTYPE html>
+<html>
+<style>
+  
+
+  /* Form styling */
+  .form-container {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Input and select styling */
+  input[type=text], select, input[type=file] {
+    width: 100%;
+    padding: 14px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    transition: border 0.3s;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+
+  input[type=text]:focus, select:focus, input[type=file]:focus {
+    border-color: #4CAF50;
+    outline: none;
+  }
+
+  /* Submit button styling */
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+  /* Label styling */
+  label {
+    display: block;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+  }
+
+</style>
+
+<body>
+
+<h3>Add Job</h3>
+
+<div class="form-container">
+  <form action=" " method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <label for="job_title">Job Title</label>
+    <input type="text" id="job_title" name="job_title">
+
+    <label for="vacancy">Vacancy</label>
+    <input type="text" id="vacancy" name="vacancy">
+
+    <label for="skill">Skill</label>
+    <input type="text" id="skill" name="skill">
+    
+    <label for="job_image">Job Image</label>
+    <input type="file" id="job_image" name="Job_Image">
+    
+    <label for="description">Job Description</label>
+    <input type="text" id="description" name="description">
+
+    <label for="category">Category</label>
+    <select id="category" name="category">
+      <option value="">Select</option>
+      <option value="full_time">Full Time</option>
+      <option value="part_time">Part Time</option>
+    </select>
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
+
+{% endblock body %}

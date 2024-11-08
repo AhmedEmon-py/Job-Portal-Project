@@ -1,0 +1,60 @@
+<style>
+    /* Navbar Styling */
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: linear-gradient(90deg, #1c3b57, #177e89); /* Dark teal and slate gradient */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Navbar Items */
+    ul li {
+        float: left;
+    }
+
+    /* Navbar Links */
+    ul li a {
+        display: block;
+        color: #e4f2f8; /* Soft, light blue for text */
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    /* Active and Hover Styles */
+    ul li a:hover, ul li a.active {
+        background: rgba(0, 0, 0, 0.15); /* Soft dark overlay on hover */
+        color: #b5e2e8; /* Light teal for hover text */
+        border-radius: 4px;
+    }
+
+    /* Float Right for Profile and Logout Links */
+    ul li.float-right {
+        float: right;
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 600px) {
+        ul li {
+            float: none;
+            text-align: center;
+        }
+        ul li a {
+            padding: 12px;
+        }
+    }
+</style>
+
+<!-- Navbar HTML -->
+<ul>
+    <li><a href="{% url 'homePage' %}">Home</a></li>
+    <li><a href="{% url 'jobFeed' %}">Job Feed</a></li>
+    <li><a href="{% url 'skillMatchingPage' %}">Skill Matching Page</a></li>
+    <li class="float-right"><a href="{% url 'logoutPage' %}">Log out</a></li>
+    <li class="float-right"><a href="{% url 'profilePage' %}">Profile</a></li>
+</ul>
